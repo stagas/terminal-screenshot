@@ -36,7 +36,7 @@ const options = new Command("terminal-screenshot")
 
     await writeFile(options.output, buffer);
   } catch (error) {
-    console.error("Error: " + error.message);
+    console.error("Error: " + (error as Error).message);
     process.exit(1);
   }
 })();
