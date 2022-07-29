@@ -5,6 +5,16 @@ import {TerminalScreenshotOptions} from "./options";
 
 export async function generateTemplate(options: TerminalScreenshotOptions): Promise<string> {
   const lines = options.data.split(/\r?\n/);
+
+  // Trim head empty lines
+  while (lines.length && lines[0].length === 0) lines.shift()
+
+  // Trim tail empty lines
+  while (lines.length && lines[lines.length - 1].length === 0) lines.pop()
+
+  // Normalize data line endings
+  const normalizedData = lines.join('\r\n');
+
   const terminalRows = lines.length;
   const terminalColumns = Math.max(...lines.map(measureLength));
 
@@ -50,7 +60,7 @@ export async function generateTemplate(options: TerminalScreenshotOptions): Prom
                 });
 
                 terminal.open(document.getElementById("terminal"));
-                terminal.write(${JSON.stringify(options.data)});
+                terminal.write(${JSON.stringify(normalizedData)});
             });
         </script>
     </body>
