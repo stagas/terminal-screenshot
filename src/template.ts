@@ -43,6 +43,8 @@ export async function generateTemplate(options: TerminalScreenshotOptions): Prom
                 const terminal = new Terminal({
                     theme: {background: "${options.backgroundColor}"},
                     fontFamily: "${options.fontFamily}",
+                    fontSize: "${options.fontSize}",
+                    lineHeight: "${options.lineHeight}",
                     rows: ${terminalRows},
                     cols: ${terminalColumns},
                 });
