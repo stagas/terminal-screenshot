@@ -15,6 +15,7 @@
     "terminal-screenshot": "out/src/cli.js"
   },
   "scripts": {
+    "prepack": "echo ok",
     "lint": "jest && prettier . --list-different && tsc"
   },
   "commitlint": {
