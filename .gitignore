@@ -2,4 +2,4 @@
 **/out
 **/yarn-error.log
 
-tests/screenshots/**
+tests/screenshots/**package-lock.json
