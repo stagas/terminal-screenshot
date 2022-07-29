@@ -1,7 +1,7 @@
 {
   "name": "@stagas/terminal-screenshot",
   "description": "Render terminal ANSI output into images!",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "stagas",
   "repository": {
     "type": "git",
